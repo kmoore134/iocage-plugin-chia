@@ -1,2 +1,2 @@
-# iocage-plugin-jenkins
-Artifact file(s) for Jenkins iocage plugin
+# iocage-plugin-chia
+Artifact file(s) for Chia iocage plugin
