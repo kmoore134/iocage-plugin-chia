@@ -35,8 +35,12 @@ echo "DEFAULT_VERSIONS+=ssl=openssl python=3.8 python3=3.8" >> /etc/make.conf
 make BATCH=yes
 
 # Even mooaarr hacks!
+echo "cp -R /usr/ports/security/py-cryptography/work-py38/stage/usr/local/lib/python3.8/site-packages/cryptography ${VIRTUAL_ENV}/lib/python3.8/site-packages/cryptography"
 cp -R /usr/ports/security/py-cryptography/work-py38/stage/usr/local/lib/python3.8/site-packages/cryptography ${VIRTUAL_ENV}/lib/python3.8/site-packages/cryptography
+echo "cp -R /usr/ports/security/py-cryptography/work-py38/stage/usr/local/lib/python3.8/site-packages/cryptography-3.3.2-py3.8.egg-info ${VIRTUAL_ENV}/lib/python3.8/site-packages/cryptography-3.3.2-py3.8.egg-info"
 cp -R /usr/ports/security/py-cryptography/work-py38/stage/usr/local/lib/python3.8/site-packages/cryptography-3.3.2-py3.8.egg-info ${VIRTUAL_ENV}/lib/python3.8/site-packages/cryptography-3.3.2-py3.8.egg-info
+find ${VIRTUAL_ENV}/lib/python3.8/site-packages/cryptography -name __pycache__ | xargs -I{} rm -rf "{}"
+
 
 make clean BATCH=yes
 
