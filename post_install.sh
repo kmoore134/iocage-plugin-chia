@@ -29,7 +29,7 @@ sed -i '' 's|elif platform == "linux":|elif platform == "linux" or platform.star
 sed -i '' 's|cryptography==3.4.7|cryptography==3.3.2|g' setup.py
 
 # Moar Hacks!
-portsnap fetch extract
+portsnap fetch extract update
 cd /usr/ports/security/py-cryptography
 echo "DEFAULT_VERSIONS+=ssl=openssl python=3.8 python3=3.8" >> /etc/make.conf
 make BATCH=yes
