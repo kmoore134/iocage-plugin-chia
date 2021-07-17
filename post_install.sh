@@ -5,19 +5,19 @@ chsh -s /usr/local/bin/bash
 
 # Clone our chia repo
 cd /root
-git clone  -b 1.1.7 https://github.com/Chia-Network/chia-blockchain.git
+git clone  -b 1.2.2 https://github.com/Chia-Network/chia-blockchain.git
 
 # Setup virtual environment
 cd chia-blockchain
 python3 -m venv venv
-source venv/bin/activate 
+cd venv/bin/ && . ./activate 
 
 # Upgrade PIP
 pip install --upgrade pip
 
 # Build and install clvm_rs
 cd /root
-git clone -b 0.1.7 https://github.com/Chia-Network/clvm_rs.git 
+git clone -b 0.1.8 https://github.com/Chia-Network/clvm_rs.git 
 cd clvm_rs
 maturin develop --release
 pip install git+https://github.com/Chia-Network/clvm@use_clvm_rs
