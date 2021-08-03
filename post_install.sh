@@ -57,7 +57,7 @@ cd /root/chia-blockchain
 sh install.sh
 
 # Setup bashrc so that chia is ready to rock and roll at startup
-echo "cd /root/chia-blockchain && . ./activate" >/root/.bashrc
+echo "source /root/chia-blockchain/activate" >/root/.bashrc
 
 # Init Chia and done!
 ./venv/bin/chia init
