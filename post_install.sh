@@ -17,7 +17,7 @@ pip install --upgrade pip
 
 # Build and install clvm_rs
 cd /root
-git clone -b 0.1.8 https://github.com/Chia-Network/clvm_rs.git 
+git clone -b 0.1.10 https://github.com/Chia-Network/clvm_rs.git 
 cd clvm_rs
 maturin develop --release
 pip install git+https://github.com/Chia-Network/clvm@use_clvm_rs
