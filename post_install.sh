@@ -17,7 +17,7 @@ pip install --upgrade pip
 
 # Build and install clvm_rs
 cd /root
-git clone -b 0.1.10 https://github.com/Chia-Network/clvm_rs.git 
+git clone -b 0.1.11 https://github.com/Chia-Network/clvm_rs.git 
 cd clvm_rs
 maturin develop --release
 pip install git+https://github.com/Chia-Network/clvm@use_clvm_rs
@@ -25,7 +25,7 @@ pip install git+https://github.com/Chia-Network/clvm@use_clvm_rs
 
 # Hack(s)!
 cd /root/chia-blockchain
-sed -i '' 's|elif platform == "linux":|elif platform == "linux" or platform.startswith("freebsd"):|g' chia/util/keychain.py
+sed -i '' 's|elif platform == "linux":|elif platform == "linux" or platform.startswith("freebsd"):|g' chia/util/keyring_wrapper.py
 sed -i '' 's|cryptography==3.4.7|cryptography==3.3.2|g' setup.py
 
 # Moar Hacks!
